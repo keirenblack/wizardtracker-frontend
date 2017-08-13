@@ -1,0 +1,41 @@
+@import '~scss/core.scss';
+
+.ContentBox {
+  border-radius: $border-radius-sm;
+  margin: $spacing-base;
+  overflow: hidden;
+
+  @include cardShadow;
+  @include desktop {
+    max-width: calc(1024px - #{$spacing-lg * 2});
+    margin: $spacing-lg auto;
+  }
+}
+
+.ContentBoxHeader {
+  background-image: linear-gradient(
+    material-color('blue', '600'),
+    material-color('blue', '700'));
+  padding: $spacing-base;
+  font-size: $font-size-md;
+  color: $color-text-primary-light;
+  font-weight: bold;
+
+  @include desktop {
+    font-size: $font-size-lg;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      material-color('blue', '500'),
+      material-color('blue', '600'));
+  }
+}
+
+.ContentBoxContent {
+  background-color: white;
+  padding: $spacing-base;
+  color: $color-text-primary-dark;
+
+  overflow: hidden;
+}

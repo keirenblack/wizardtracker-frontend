@@ -1,0 +1,31 @@
+@import '~scss/core.scss';
+
+.DeviceConnector {
+
+}
+
+@mixin ConnectionStatus($color) {
+  border-radius: $border-radius-sm;
+  padding: $spacing-sm;
+
+  text-align: center;
+  font-size: $font-size-base;
+  color: material-color($color, '800');
+  background-color: material-color($color, '100');
+
+  @include desktop {
+    font-size: $font-size-md;
+  }
+}
+
+.ConnectionStatusConnected {
+  @include ConnectionStatus('green');
+}
+
+.ConnectionStatusConnecting {
+  @include ConnectionStatus('orange');
+}
+
+.ConnectionStatusDisconnected {
+  @include ConnectionStatus('red');
+}

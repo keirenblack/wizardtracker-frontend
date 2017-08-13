@@ -1,0 +1,21 @@
+@import '~sass-material-colors/sass/sass-material-colors';
+
+
+$color-text-primary-light: material-color('grey' ,'100');
+$color-text-primary-dark: material-color('grey' ,'900');
+
+$rem-1px: (1 / 16) * 1rem;
+
+$spacing-sm: 0.5rem;
+$spacing-base: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+
+$font-size-base: 1rem;
+$font-size-md: 1.5rem;
+$font-size-lg: 2rem;
+
+$border-radius-sm: 0.5rem;
+$border-radius-md: 1rem;
+
+$desktop-breakpoint: 1024px;
