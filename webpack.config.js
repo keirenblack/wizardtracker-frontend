@@ -3,7 +3,7 @@ const distPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
   entry: [
-    './src/index.tsx',
+    './src/index.jsx',
     './src/html/index.pug',
     './src/scss/global.scss'
   ],
@@ -16,24 +16,21 @@ module.exports = {
       path.resolve(__dirname, 'src'),
       "node_modules",
     ],
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.js', '.jsx']
   },
 
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
         use: [
           {
-            loader: 'awesome-typescript-loader',
+            loader: 'babel-loader',
             options: {
-              useBabel: true,
-              useCache: true
+              presets: ['env', 'react']
             }
           }
-        ],
-        exclude: [
-          "node_modules"
         ]
       },
       {

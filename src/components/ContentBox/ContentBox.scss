@@ -14,8 +14,8 @@
 
 .ContentBoxHeader {
   background-image: linear-gradient(
-    material-color('blue', '600'),
-    material-color('blue', '700'));
+    material-color($color-primary-material, '600'),
+    material-color($color-primary-material, '700'));
   padding: $spacing-base;
   font-size: $font-size-md;
   color: $color-text-primary-light;
@@ -27,8 +27,8 @@
 
   &:hover {
     background-image: linear-gradient(
-      material-color('blue', '500'),
-      material-color('blue', '600'));
+      material-color($color-primary-material, '500'),
+      material-color($color-primary-material, '600'));
   }
 }
 

@@ -2,12 +2,7 @@ import * as React from 'react';
 import styles from './DeviceConnector.scss';
 import * as classNames from 'classnames';
 
-export interface DeviceConnectorProps {
-  comPorts: string[],
-  connected: boolean
-}
-
-export default class DeviceConnector extends React.Component<DeviceConnectorProps, any> {
+export default class DeviceConnector extends React.Component {
   constructor(props) {
     super(props);
 
