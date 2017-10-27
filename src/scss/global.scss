@@ -28,10 +28,9 @@ button {
   display: inline-block;
   background-color: material-color($color-primary-material, '600');
   color: $color-text-primary-light;
-  border: 1px solid transparent;
-  border-radius: $spacing-xs;
+  border: 0px;
+  border-radius: $border-radius-sm;
   padding: $spacing-sm $spacing-md;
-  margin: $spacing-xs;
 
   &:hover {
     background-color: material-color($color-primary-material, '500');
@@ -42,9 +41,13 @@ select {
   display: inline-block;
   color: $color-text-primary-dark;
   padding: $spacing-sm;
-  margin: $spacing-xs;
-  border: 1px solid material-color('grey', '400');
-  border-radius: $spacing-xs;
+  background-color: material-color('grey', '200');
+  border: 0;
+  border-radius: $border-radius-sm;
+
+  &:disabled {
+    color: material-color('grey', '400');
+  }
 }
 
 /*:global(.MainMenu) {

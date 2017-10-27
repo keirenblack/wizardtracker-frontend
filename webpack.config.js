@@ -3,6 +3,7 @@ const distPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
   entry: [
+    'babel-polyfill',
     './src/index.jsx',
     './src/html/index.pug',
     './src/scss/global.scss'
@@ -67,7 +68,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff2?)$/,
+        test: /\.(ttf|woff|woff2|eot?)$/,
         use: [
           'file-loader?name=fonts/[name].[ext]',
         ]
@@ -84,7 +85,13 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     host: '0.0.0.0',
-    contentBase: distPath
+    contentBase: distPath,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000/',
+        pathRewrite: { '^/api': '' }
+      }
+    }
   }
 }
 

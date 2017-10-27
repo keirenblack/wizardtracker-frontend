@@ -1,0 +1,26 @@
+@import '~scss/core.scss';
+
+.DeviceStatus {
+  display: flex;
+  margin: $spacing-xs 0;
+}
+
+%Icon {
+  @extend .fa;
+  margin-right: $spacing-xs;
+}
+
+.IconBattery {
+  @extend %Icon;
+  @extend .fa-battery-half;
+}
+
+.IconTemperature {
+  @extend %Icon;
+  @extend .fa-thermometer-half;
+}
+
+.IconAccuracy {
+  @extend %Icon;
+  @extend .fa-crosshairs;
+}

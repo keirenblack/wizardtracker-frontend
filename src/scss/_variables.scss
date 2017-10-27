@@ -1,7 +1,7 @@
 @import '~sass-material-colors/sass/sass-material-colors';
 
 
-$color-primary-material: 'light-blue';
+$color-primary-material: 'blue';
 
 $color-text-primary-light: material-color('grey' ,'100');
 $color-text-primary-dark: material-color('grey' ,'900');
@@ -15,6 +15,7 @@ $spacing-md: 1.5rem;
 $spacing-lg: 2rem;
 
 $font-family: 'Open Sans', sans-serif, serif;
+$font-size-sm: 0.75rem;
 $font-size-base: 1rem;
 $font-size-md: 1.5rem;
 $font-size-lg: 2rem;

@@ -1,0 +1,22 @@
+@import '~scss/core.scss';
+
+.StatusPill {
+  display: inline-block;
+
+  background-color: material-color('grey', '200');
+  padding: $spacing-sm;
+  font-size: $font-size-base;
+  border-radius: $border-radius-sm;
+  text-align: center;
+
+  width: 50%;
+  margin: 0 ($spacing-xs / 2);
+
+  &:first-child {
+    margin-left: 0px;
+  }
+
+  &:last-child {
+    margin-right: 0px;
+  }
+}

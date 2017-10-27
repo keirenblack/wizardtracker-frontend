@@ -4,6 +4,34 @@
 
 }
 
+.ConnectContainer {
+  display: flex;
+  margin: $spacing-xs 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.PortSelector {
+  display: block;
+  margin: 0 ($spacing-xs / 2);
+  margin-left: 0;
+
+  height: 3rem;
+  width: 100%;
+
+  flex-grow: 1;
+}
+
+.ConnectButton {
+  display: block;
+  margin: 0 ($spacing-xs / 2);
+  margin-right: 0;
+
+  height: 3rem;
+}
+
 @mixin ConnectionStatus($color) {
   border-radius: $border-radius-sm;
   padding: $spacing-sm;

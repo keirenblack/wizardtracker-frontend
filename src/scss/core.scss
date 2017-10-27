@@ -1,6 +1,9 @@
 @import '~normalize-scss/sass/normalize/import-now';
 @import '~sass-material-colors/sass/sass-material-colors';
 
+$fa-font-path: "font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome';
+
 @import './_variables.scss';
 @import './_fonts.scss';
 @import './_mixins.scss';
