@@ -35,6 +35,11 @@ button {
   &:hover {
     background-color: material-color($color-primary-material, '500');
   }
+
+  &:disabled {
+    background-color: material-color('grey', '600');
+    color: material-color('grey', '400');
+  }
 }
 
 select {
