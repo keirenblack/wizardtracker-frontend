@@ -30,10 +30,11 @@ ReactDOM.render(
 );
 
 store.dispatch({ type: 'FETCH_PORTS_REQUEST' })
+store.dispatch({ type: 'FETCH_STATUS' })
 
 window.setInterval(() => {
     store.dispatch({ type: 'FETCH_STATUS' })
-}, 2000)
+}, 5000)
 
 const socket = io.connect('http://localhost:5000/')
 socket.on('rssi', (data) => {
