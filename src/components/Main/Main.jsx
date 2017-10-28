@@ -1,9 +1,9 @@
-import * as React from 'react';
-import * as io from 'socket.io-client';
+import React from 'react'
+import DeviceBox from '../DeviceBox/DeviceBox'
 
-import DeviceBox from '../DeviceBox/DeviceBox';
-
-export default () =>
+const Main = () =>
   <div>
     <DeviceBox />
   </div>
+
+export default Main

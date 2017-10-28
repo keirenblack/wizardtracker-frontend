@@ -3,7 +3,7 @@ import styles from './DeviceStatus.scss';
 
 import StatusPill from './StatusPill/StatusPill'
 
-export default function (props) {
+const DeviceStatus = (props) => {
   const voltage = props.voltage || '?'
   const temperature = props.temperature || '?'
 
@@ -31,3 +31,5 @@ export default function (props) {
     </StatusPill>
   </div>
 }
+
+export default DeviceStatus;

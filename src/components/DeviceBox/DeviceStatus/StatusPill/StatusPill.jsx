@@ -1,8 +1,9 @@
 import React from 'react'
-import styles from './StatusPill.scss';
+import styles from './StatusPill.scss'
 
-export default function (props) {
-  return <div className={styles.StatusPill}>
+const StatusPill = (props) =>
+  <div className={styles.StatusPill}>
     {props.children}
   </div>
-}
+
+export default StatusPill
