@@ -8,7 +8,7 @@ export default function (props) {
   const temperature = props.temperature || '?'
 
   let accuracy = null;
-  if (props.hz == undefined) {
+  if (props.hz !== undefined) {
     accuracy = Math.round(1000 / props.hz)
   } else {
     accuracy = '?'
