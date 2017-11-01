@@ -8,7 +8,8 @@ import {
 function device(state = { ports: [], rssi: [] }, action) {
   switch (action.type) {
     case FETCH_STATUS_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         connected: action.status.connected,
         ready: action.status.ready,
         frequencies: action.status.frequencies,
@@ -16,17 +17,19 @@ function device(state = { ports: [], rssi: [] }, action) {
         voltage: action.status.voltage,
         temperature: action.status.temperature,
         hz: action.status.hz
-      })
+      }
 
     case FETCH_PORTS_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         ports: action.ports
-      })
+      }
 
     case RECEIVE_RSSI:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         rssi: action.rssi
-      })
+      }
 
     default:
       return state
