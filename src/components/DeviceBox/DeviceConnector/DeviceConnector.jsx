@@ -70,9 +70,8 @@ export default class DeviceConnector extends React.Component {
             disabled={this.props.connected | noPortsDetected}
             value={this.state.selectedPort}
             onChange={this.onChangePort}
-            placeholder="No ports."
           >
-            <option disabled hidden={!noPortsDetected}>
+            <option hidden={!noPortsDetected}>
               No ports detected
             </option>
 
