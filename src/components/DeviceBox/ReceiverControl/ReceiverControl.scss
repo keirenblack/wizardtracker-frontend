@@ -26,8 +26,6 @@
   text-align: center;
   height: $spacing-md;
 
-  border-radius: $border-radius-sm;
-
   &:last-child {
     margin-bottom: 0px;
   }
@@ -40,9 +38,8 @@
   height: 100%;
 
   transition: width 0.25s;
-  border-radius: $border-radius-sm;
 
-  min-width: 5%;
+  min-width: 1%;
   max-width: 100%;
 }
 

@@ -33,7 +33,6 @@
 }
 
 @mixin ConnectionStatus($color) {
-  border-radius: $border-radius-sm;
   padding: $spacing-sm;
 
   text-align: center;

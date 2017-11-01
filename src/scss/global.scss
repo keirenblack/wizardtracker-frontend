@@ -29,7 +29,6 @@ button {
   background-color: material-color($color-primary-material, '600');
   color: $color-text-primary-light;
   border: 0px;
-  border-radius: $border-radius-sm;
   padding: $spacing-sm $spacing-md;
 
   &:hover {
@@ -48,7 +47,7 @@ select {
   padding: $spacing-sm;
   background-color: material-color('grey', '200');
   border: 0;
-  border-radius: $border-radius-sm;
+  //border-radius: $border-radius-sm;
 
   &:disabled {
     color: material-color('grey', '400');
