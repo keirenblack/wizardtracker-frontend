@@ -2,8 +2,11 @@
 
 .ReceiverControl {
   display: flex;
-
   margin: $spacing-xs 0;
+
+  &:last-child {
+    margin-bottom :0;
+  }
 }
 
 .FrequencySelector {
