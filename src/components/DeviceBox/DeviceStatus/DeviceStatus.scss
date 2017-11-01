@@ -3,6 +3,7 @@
 .DeviceStatus {
   display: flex;
   margin: $spacing-xs 0;
+  background-color: material-color('grey', '200');
 }
 
 %Icon {

@@ -3,7 +3,6 @@
 .StatusPill {
   display: inline-block;
 
-  background-color: material-color('grey', '200');
   padding: $spacing-sm;
   font-size: $font-size-base;
   text-align: center;
@@ -17,5 +16,10 @@
 
   &:last-child {
     margin-right: 0px;
+  }
+
+  @include desktop {
+    padding: $spacing-base;
+    font-size: $font-size-md;
   }
 }

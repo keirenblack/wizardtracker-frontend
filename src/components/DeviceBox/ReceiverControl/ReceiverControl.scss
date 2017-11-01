@@ -1,5 +1,13 @@
 @import '~scss/core.scss';
 
+@mixin set-bar-height() {
+  height: $spacing-lg;
+  @include desktop {
+    height: $spacing-lg * 1.5;
+  }
+}
+
+
 .ReceiverControl {
   display: flex;
   margin: $spacing-xs 0;
@@ -10,24 +18,28 @@
 }
 
 .FrequencySelector {
-  height: $spacing-lg;
-  font-size: $font-size-sm;
+  @include set-bar-height();
 
-  padding: $spacing-xs;
-  margin-right: $spacing-xs;
+  font-size: $font-size-base;
+  padding: 0 $spacing-base;
+  margin-right: 0;
+
+  @include desktop {
+    padding: 0 $spacing-lg;
+  }
 }
 
 .RssiBar {
+  @include set-bar-height();
+
   display: relative;
   position: relative;
-
   width: 100%;
 
   background-color: material-color($color-primary-material, '100');
   margin-bottom: $spacing-xs;
 
   text-align: center;
-  height: $spacing-lg;
 
   &:last-child {
     margin-bottom: 0px;
@@ -42,7 +54,6 @@
 
   transition: width 0.25s;
 
-  min-width: 1%;
   max-width: 100%;
 }
 
@@ -57,5 +68,5 @@
   justify-content: center;
   text-align: center;
 
-  font-size: $font-size-sm;
+  font-size: $font-size-base;
 }

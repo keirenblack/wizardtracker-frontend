@@ -15,7 +15,6 @@
 
 .PortSelector {
   display: block;
-  margin: 0 ($spacing-xs / 2);
   margin-left: 0;
 
   height: 3rem;
@@ -26,9 +25,6 @@
 
 .ConnectButton {
   display: block;
-  margin: 0 ($spacing-xs / 2);
-  margin-right: 0;
-
   height: 3rem;
 }
 
@@ -41,6 +37,7 @@
   background-color: material-color($color, '100');
 
   @include desktop {
+    padding: $spacing-base;
     font-size: $font-size-md;
   }
 }
