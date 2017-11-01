@@ -1,4 +1,6 @@
 const path = require('path');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+
 const distPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
@@ -82,6 +84,10 @@ module.exports = {
     ]
   },
 
+  plugins: [
+    new FriendlyErrorsWebpackPlugin(),
+  ],
+
   devtool: 'inline-source-map',
   devServer: {
     host: '0.0.0.0',
@@ -91,7 +97,8 @@ module.exports = {
         target: 'http://localhost:5000/',
         pathRewrite: { '^/api': '' }
       }
-    }
+    },
+    quiet: true
   }
 }
 
