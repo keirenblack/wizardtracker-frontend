@@ -4,8 +4,8 @@ import styles from './DeviceStatus.scss';
 import StatusPill from './StatusPill/StatusPill'
 
 const DeviceStatus = (props) => {
-  const voltage = props.voltage || '?'
-  const temperature = props.temperature || '?'
+  const voltage = props.voltage !== undefined ? props.voltage : '?'
+  const temperature = props.temperature !== undefined ? props.temperature : '?'
 
   let accuracy = null;
   if (props.hz !== undefined) {
