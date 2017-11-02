@@ -29,7 +29,7 @@ const DeviceBox = (props) => {
     />
   }
 
-  return <ContentBox title='Device'>
+  return <ContentBox title='Device' showSpinner={props.showSpinner}>
     <DeviceConnector
       ports={props.ports}
       connecting={props.connecting}

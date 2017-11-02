@@ -1,5 +1,8 @@
 import { put, takeEvery } from 'redux-saga/effects'
 import {
+  DEVICE_SHOW_SPINNER,
+  DEVICE_HIDE_SPINNER,
+
   FETCH_STATUS,
   FETCH_STATUS_SUCCESS,
 
@@ -21,32 +24,50 @@ function* fetchStatus(action) {
 }
 
 function* fetchPorts(action) {
+  yield put({ type: DEVICE_SHOW_SPINNER })
+
   const ports = yield fetch('/api/device/ports')
     .then(response => response.json())
     .then(json => json)
 
+  yield put({ type: DEVICE_HIDE_SPINNER })
   yield put({ type: FETCH_PORTS_SUCCESS, ports: ports.ports })
 }
 
 function* connectDevice(action) {
+  yield put({ type: DEVICE_SHOW_SPINNER })
+
   yield fetch(`/api/device/connect?port=${action.portName}`, {
     method: 'post'
   })
+
+  yield put({ type: FETCH_STATUS })
+  yield put({ type: DEVICE_HIDE_SPINNER })
 }
 
 function* disconnectDevice(action) {
+  yield put({ type: DEVICE_SHOW_SPINNER })
+
   yield fetch('/api/device/disconnect', {
     method: 'post'
   })
+
+  yield put({ type: FETCH_STATUS })
+  yield put({ type: DEVICE_HIDE_SPINNER })
 }
 
 function* setFrequency(action) {
+  yield put({ type: DEVICE_SHOW_SPINNER })
+
   yield fetch(
     `/api/device/set_frequency?id=${action.id}&frequency=${action.frequency}`,
     {
       method: 'post'
     }
   )
+
+  yield put({ type: FETCH_STATUS })
+  yield put({ type: DEVICE_HIDE_SPINNER })
 }
 
 function* saga() {

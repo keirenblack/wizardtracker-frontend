@@ -33,8 +33,12 @@
 
 .ContentBoxContent {
   background-color: white;
-  padding: $spacing-base;
-  color: $color-text-primary-dark;
 
   overflow: hidden;
+  position: relative;
+}
+
+.ContentBoxContentInner {
+  padding: $spacing-base;
+  color: $color-text-primary-dark;
 }
