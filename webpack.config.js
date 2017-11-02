@@ -6,7 +6,7 @@ const distPath = path.resolve(__dirname, 'dist');
 module.exports = {
   entry: [
     'babel-polyfill',
-    './src/index.jsx',
+    './src/js/index.jsx',
     './src/html/index.pug',
     './src/scss/global.scss'
   ],
