@@ -12,8 +12,10 @@ const DeviceBox = (props) => {
     receiverControls.push(
       <ReceiverControl
         key={i}
+        index={i}
         frequency={props.frequencies[i]}
         rssi={props.rssi[i]}
+        onSetFrequency={props.onSetFrequency}
       />
     )
   }
@@ -46,7 +48,10 @@ const mapStateToProps = (state) => state.device
 const mapDispatchToProps = (dispatch) => {
   return {
     onDisconnect: () => { dispatch({ type: 'DISCONNECT_DEVICE' }) },
-    onConnect: portName => { dispatch({ type: 'CONNECT_DEVICE', portName })}
+    onConnect: portName => { dispatch({ type: 'CONNECT_DEVICE', portName }) },
+    onSetFrequency: (id, frequency) => {
+      dispatch({ type: 'SET_FREQUENCY', id, frequency })
+    }
   }
 }
 

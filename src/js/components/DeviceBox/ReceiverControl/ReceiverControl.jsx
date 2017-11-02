@@ -4,9 +4,10 @@ import styles from './ReceiverControl.scss'
 import channels from 'utils/channels'
 
 export default function ReceiverControl (props) {
-  const rssiPercent = Math.round(props.rssi / 255 * 100) + '%'
+  const rssiPercent = props.rssi / 255
+  const rssiText = Math.round(rssiPercent * 100) + '%'
   const innerStyle = {
-    width: rssiPercent
+    width: rssiPercent * 100 + '%'
   }
 
   const frequencyOptions = []
@@ -29,7 +30,9 @@ export default function ReceiverControl (props) {
     <select
       className={styles.FrequencySelector}
       value={selectedFrequency && selectedFrequency.frequency || 'unknown'}
-      readOnly={true}
+      onChange={event => {
+        props.onSetFrequency(props.index, event.target.value)
+      }}
     >
       <option
         value={'unknown'}
@@ -44,7 +47,7 @@ export default function ReceiverControl (props) {
 
     <div className={styles.RssiBar}>
       <div className={styles.RssiBarInner} style={innerStyle} />
-      <div className={styles.RssiBarText}>{rssiPercent}</div>
+      <div className={styles.RssiBarText}>{rssiText}</div>
     </div>
   </div>
 }

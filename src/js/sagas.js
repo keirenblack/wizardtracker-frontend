@@ -6,6 +6,8 @@ import {
   FETCH_PORTS_REQUEST,
   FETCH_PORTS_SUCCESS,
 
+  SET_FREQUENCY,
+
   CONNECT_DEVICE,
   DISCONNECT_DEVICE
 } from './actions'
@@ -27,19 +29,24 @@ function* fetchPorts(action) {
 }
 
 function* connectDevice(action) {
-  const status = yield fetch('/api/device/connect?port=' + action.portName, {
+  yield fetch(`/api/device/connect?port=${action.portName}`, {
     method: 'post'
   })
-    .then(response => response.json())
-    .then(json => json)
 }
 
 function* disconnectDevice(action) {
-  const status = yield fetch('/api/device/disconnect', {
+  yield fetch('/api/device/disconnect', {
     method: 'post'
   })
-    .then(response => response.json())
-    .then(json => json)
+}
+
+function* setFrequency(action) {
+  yield fetch(
+    `/api/device/set_frequency?id=${action.id}&frequency=${action.frequency}`,
+    {
+      method: 'post'
+    }
+  )
 }
 
 function* saga() {
@@ -47,6 +54,7 @@ function* saga() {
   yield takeEvery(FETCH_PORTS_REQUEST, fetchPorts)
   yield takeEvery(CONNECT_DEVICE, connectDevice)
   yield takeEvery(DISCONNECT_DEVICE, disconnectDevice)
+  yield takeEvery(SET_FREQUENCY, setFrequency)
 }
 
 export default saga
