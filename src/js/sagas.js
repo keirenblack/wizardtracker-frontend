@@ -15,7 +15,7 @@ import {
   DISCONNECT_DEVICE
 } from './actions'
 
-function* fetchStatus(action) {
+function* fetchStatus() {
   const status = yield fetch('/api/device/status')
     .then(response => response.json())
     .then(json => json)
@@ -23,7 +23,7 @@ function* fetchStatus(action) {
   yield put({ type: FETCH_STATUS_SUCCESS, status: status })
 }
 
-function* fetchPorts(action) {
+function* fetchPorts() {
   yield put({ type: DEVICE_SHOW_SPINNER })
 
   const ports = yield fetch('/api/device/ports')
@@ -45,7 +45,7 @@ function* connectDevice(action) {
   yield put({ type: DEVICE_HIDE_SPINNER })
 }
 
-function* disconnectDevice(action) {
+function* disconnectDevice() {
   yield put({ type: DEVICE_SHOW_SPINNER })
 
   yield fetch('/api/device/disconnect', {
