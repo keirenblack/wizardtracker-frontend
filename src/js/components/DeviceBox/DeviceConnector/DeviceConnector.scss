@@ -46,10 +46,6 @@
   @include ConnectionStatus('green');
 }
 
-.ConnectionStatusConnecting {
-  @include ConnectionStatus('orange');
-}
-
 .ConnectionStatusDisconnected {
   @include ConnectionStatus('red');
 }

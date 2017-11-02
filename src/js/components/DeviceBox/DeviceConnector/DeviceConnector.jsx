@@ -49,9 +49,7 @@ export default class DeviceConnector extends React.Component {
     }
 
     let connectionStatusStyle = null
-    if (this.props.connecting) {
-      connectionStatusStyle = styles.ConnectionStatusConnecting
-    } else if (this.props.connected) {
+    if (this.props.connected) {
       connectionStatusStyle = styles.ConnectionStatusConnected
     } else {
       connectionStatusStyle = styles.ConnectionStatusDisconnected
