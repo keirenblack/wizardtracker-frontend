@@ -23,6 +23,7 @@
   font-size: $font-size-base;
   padding: 0 $spacing-base;
   margin-right: 0;
+  text-align-last: center;
 
   @include desktop {
     padding: 0 $spacing-lg;
