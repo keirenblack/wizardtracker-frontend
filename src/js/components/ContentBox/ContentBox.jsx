@@ -1,16 +1,7 @@
-import * as React from 'react';
-import styles from './ContentBox.scss';
+import * as React from 'react'
+import styles from './ContentBox.scss'
 
-export interface ContentBoxProps {
-  title: string,
-  children?: any
-}
-
-interface ContentBoxState {
-  hidden: boolean
-}
-
-export default class ContentBox extends React.Component<ContentBoxProps, ContentBoxState> {
+export default class ContentBox extends React.Component {
   constructor(props) {
     super(props);
 
