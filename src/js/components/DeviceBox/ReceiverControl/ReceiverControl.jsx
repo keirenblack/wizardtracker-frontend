@@ -28,7 +28,7 @@ export default function ReceiverControl (props) {
 
   return <div className={styles.ReceiverControl}>
     <select
-      className={styles.FrequencySelector}
+    className={styles['FrequencySelector' + (props.index + 1)]}
       value={selectedFrequency && selectedFrequency.frequency || 'unknown'}
       onChange={event => {
         props.onSetFrequency(props.index, event.target.value)
@@ -45,8 +45,11 @@ export default function ReceiverControl (props) {
       {frequencyOptions}
     </select>
 
-    <div className={styles.RssiBar}>
-      <div className={styles.RssiBarInner} style={innerStyle} />
+    <div className={styles['RssiBar' + (props.index + 1)]}>
+      <div
+        className={styles['RssiBarInner' + (props.index + 1)]}
+        style={innerStyle}
+      />
       <div className={styles.RssiBarText}>{rssiText}</div>
     </div>
   </div>

@@ -1,5 +1,7 @@
 @import '~scss/core.scss';
 
+$barColors: ('red', 'deep-orange', 'amber', 'green', 'blue', 'deep-purple');
+
 @mixin set-bar-height() {
   height: $spacing-lg;
   @include desktop {
@@ -17,7 +19,7 @@
   }
 }
 
-.FrequencySelector {
+%FrequencySelector {
   @include set-bar-height();
 
   font-size: $font-size-base;
@@ -30,14 +32,13 @@
   }
 }
 
-.RssiBar {
+%RssiBar {
   @include set-bar-height();
 
   display: relative;
   position: relative;
   width: 100%;
 
-  background-color: material-color($color-primary-material, '100');
   margin-bottom: $spacing-xs;
 
   text-align: center;
@@ -47,15 +48,32 @@
   }
 }
 
-.RssiBarInner {
+%RssiBarInner {
   position: absolute;
-
-  background-color: material-color($color-primary-material, '400');
   height: 100%;
+  max-width: 100%;
+  min-width: 1%;
 
   transition: width 0.25s ease-in-out;
+}
 
-  max-width: 100%;
+@for $i from 1 through length($barColors) {
+  $barColor: nth($barColors, $i);
+
+  .FrequencySelector#{$i} {
+    @extend %FrequencySelector;
+    background-color: material-color($barColor, '50');
+  }
+
+  .RssiBar#{$i} {
+    @extend %RssiBar;
+    background-color: material-color($barColor, '100');
+  }
+
+  .RssiBarInner#{$i} {
+    @extend %RssiBarInner;
+    background-color: material-color($barColor, '200');
+  }
 }
 
 .RssiBarText {
