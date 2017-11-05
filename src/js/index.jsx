@@ -36,7 +36,7 @@ window.setInterval(() => {
     store.dispatch({ type: 'FETCH_STATUS' })
 }, 5000)
 
-const socket = io.connect('http://localhost:5000/')
+const socket = io.connect(`http://${window.location.hostname}:5000/`)
 socket.on('rssi', (data) => {
     store.dispatch({ type: 'RECEIVE_RSSI', rssi: data.rssi })
 })
