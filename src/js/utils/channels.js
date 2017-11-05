@@ -7,7 +7,7 @@ const frequenciesByBand = {
     5785,
     5765,
     5745,
-    5245
+    5725
   ],
 
   B: [
