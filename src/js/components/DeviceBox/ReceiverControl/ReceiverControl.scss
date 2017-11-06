@@ -49,14 +49,27 @@ $barColors: ('red', 'deep-orange', 'amber', 'green', 'blue', 'deep-purple');
   }
 }
 
-.RssiBarInner {
+%RssiBarInner {
   position: absolute;
-  height: 100%;
+
   max-width: 100%;
   min-width: 1%;
   border-radius: 0 $border-radius-xs $border-radius-xs 0;
 
-  transition: width 0.25s ease-in-out;
+  transition: width 0.066s linear;
+}
+
+.RssiBarInnerFiltered {
+  @extend %RssiBarInner;
+
+  height: 100%;
+}
+
+.RssiBarInnerRaw {
+  @extend %RssiBarInner;
+
+  bottom: 0;
+  height: 10%;
 }
 
 .RssiBarText {

@@ -2,7 +2,8 @@ import { combineReducers } from 'redux'
 import {
   FETCH_STATUS_SUCCESS,
   FETCH_PORTS_SUCCESS,
-  RECEIVE_RSSI,
+  RECEIVE_RSSI_RAW,
+  RECEIVE_RSSI_FILTERED,
   DEVICE_SHOW_SPINNER,
   DEVICE_HIDE_SPINNER
 } from './actions'
@@ -27,10 +28,16 @@ function device(state = { ports: [], rssi: [] }, action) {
         ports: action.ports
       }
 
-    case RECEIVE_RSSI:
+    case RECEIVE_RSSI_RAW:
       return {
         ...state,
-        rssi: action.rssi
+        rssiRaw: action.rssi
+      }
+
+    case RECEIVE_RSSI_FILTERED:
+      return {
+        ...state,
+        rssiFiltered: action.rssi
       }
 
     case DEVICE_SHOW_SPINNER:

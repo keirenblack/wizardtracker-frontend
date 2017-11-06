@@ -22,17 +22,24 @@ export default function ReceiverControl (props) {
     )
   }
 
-  const rssiPercent = props.rssi / 255
-  const rssiText = Math.round(rssiPercent * 100) + '%'
+  const rssiFilteredPercent = props.rssiFiltered / 255
+  const rssiFilteredText = Math.round(rssiFilteredPercent * 100) + '%'
+
+  const rssiRawPercent = props.rssiRaw / 255
 
   const hue = frequencyToHue(props.frequency)
   const barStyle = {
     backgroundColor: `hsl(${hue}, 50%, 80%)`
   }
 
-  const barInnerStyle = {
+  const barInnerFilteredStyle = {
     backgroundColor: `hsl(${hue}, 50%, 66%)`,
-    width: rssiPercent * 100 + '%'
+    width: rssiFilteredPercent * 100 + '%'
+  }
+
+  const barInnerRawStyle = {
+    backgroundColor: `hsl(${hue}, 50%, 50%)`,
+    width: rssiRawPercent * 100 + '%'
   }
 
   const frequencySelectStyle = {
@@ -66,10 +73,14 @@ export default function ReceiverControl (props) {
       style={barStyle}
     >
       <div
-        className={styles.RssiBarInner}
-        style={barInnerStyle}
+        className={styles.RssiBarInnerFiltered}
+        style={barInnerFilteredStyle}
       />
-      <div className={styles.RssiBarText}>{rssiText}</div>
+      <div
+        className={styles.RssiBarInnerRaw}
+        style={barInnerRawStyle}
+      />
+      <div className={styles.RssiBarText}>{rssiFilteredText}</div>
     </div>
   </div>
 }

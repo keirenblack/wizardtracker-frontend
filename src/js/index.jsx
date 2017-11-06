@@ -37,6 +37,12 @@ window.setInterval(() => {
 }, 5000)
 
 const socket = io.connect(`http://${window.location.hostname}:5000/`)
-socket.on('rssi', (data) => {
-    store.dispatch({ type: 'RECEIVE_RSSI', rssi: data.rssi })
+
+socket.on('rssiRaw', (data) => {
+    store.dispatch({ type: 'RECEIVE_RSSI_RAW', rssi: data.rssi })
 })
+
+socket.on('rssiFiltered', (data) => {
+    store.dispatch({ type: 'RECEIVE_RSSI_FILTERED', rssi: data.rssi })
+})
+

@@ -14,7 +14,8 @@ const DeviceBox = (props) => {
         key={i}
         index={i}
         frequency={props.frequencies[i]}
-        rssi={props.rssi[i]}
+        rssiFiltered={props.rssiFiltered[i]}
+        rssiRaw={props.rssiRaw[i]}
         onSetFrequency={props.onSetFrequency}
       />
     )
