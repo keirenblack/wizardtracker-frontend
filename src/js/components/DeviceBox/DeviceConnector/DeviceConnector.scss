@@ -1,12 +1,11 @@
 @import '~scss/core.scss';
 
-.DeviceConnector {
-
-}
-
 .ConnectContainer {
   display: flex;
   margin: $spacing-xs 0;
+
+  border-radius: $border-radius-sm;
+  overflow: hidden;
 
   &:last-child {
     margin-bottom: 0;
@@ -35,6 +34,7 @@
   font-size: $font-size-base;
   color: material-color($color, '800');
   background-color: material-color($color, '100');
+  border-radius: $border-radius-sm;
 
   @include desktop {
     padding: $spacing-base;

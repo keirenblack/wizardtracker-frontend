@@ -4,6 +4,8 @@
   margin: $spacing-base;
   overflow: hidden;
 
+  border-radius: $border-radius-sm;
+
   @include cardShadow;
   @include desktop {
     max-width: calc(1024px - #{$spacing-lg * 2});

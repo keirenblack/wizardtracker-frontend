@@ -13,6 +13,8 @@ $barColors: ('red', 'deep-orange', 'amber', 'green', 'blue', 'deep-purple');
 .ReceiverControl {
   display: flex;
   margin: $spacing-xs 0;
+  border-radius: $border-radius-sm;
+  overflow: hidden;
 
   &:last-child {
     margin-bottom :0;
@@ -40,7 +42,6 @@ $barColors: ('red', 'deep-orange', 'amber', 'green', 'blue', 'deep-purple');
   width: 100%;
 
   margin-bottom: $spacing-xs;
-
   text-align: center;
 
   &:last-child {
@@ -53,6 +54,7 @@ $barColors: ('red', 'deep-orange', 'amber', 'green', 'blue', 'deep-purple');
   height: 100%;
   max-width: 100%;
   min-width: 1%;
+  border-radius: 0 $border-radius-sm $border-radius-sm 0;
 
   transition: width 0.25s ease-in-out;
 }
