@@ -12,14 +12,24 @@
   }
 }
 
+.IconUsb {
+  @extend .fa;
+  @extend .fa-usb;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 $spacing-base;
+
+  background-color: material-color('grey', '300');
+}
+
 .PortSelector {
   display: block;
   margin-left: 0;
 
   height: 3rem;
   width: 100%;
-
-  flex-grow: 1;
 }
 
 .ConnectButton {

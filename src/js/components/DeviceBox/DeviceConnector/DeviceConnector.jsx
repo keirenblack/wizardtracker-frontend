@@ -63,6 +63,7 @@ export default class DeviceConnector extends React.Component {
         </div>
 
         <div className={styles.ConnectContainer}>
+          <div className={styles.IconUsb} />
           <select
             className={styles.PortSelector}
             disabled={this.props.connected | noPortsDetected}
