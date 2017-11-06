@@ -95,7 +95,7 @@ for (const band in frequenciesByBand) {
 }
 
 function frequencyToHue(frequency) {
-  return (frequency - 5645) * 1.2
+  return (((frequency - 5645) * 1.2) + 360) % 360
 }
 
 export default new ChannelCollection(allChannels)
