@@ -4,7 +4,7 @@
   margin: $spacing-base;
   overflow: hidden;
 
-  border-radius: $border-radius-sm;
+  border-radius: $border-radius-xs;
 
   @include cardShadow;
   @include desktop {
