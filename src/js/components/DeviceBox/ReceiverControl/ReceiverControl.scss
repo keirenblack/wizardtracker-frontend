@@ -21,7 +21,7 @@ $barColors: ('red', 'deep-orange', 'amber', 'green', 'blue', 'deep-purple');
   }
 }
 
-%FrequencySelector {
+.FrequencySelector {
   @include set-bar-height();
 
   font-size: $font-size-base;
@@ -34,7 +34,7 @@ $barColors: ('red', 'deep-orange', 'amber', 'green', 'blue', 'deep-purple');
   }
 }
 
-%RssiBar {
+.RssiBar {
   @include set-bar-height();
 
   display: relative;
@@ -49,7 +49,7 @@ $barColors: ('red', 'deep-orange', 'amber', 'green', 'blue', 'deep-purple');
   }
 }
 
-%RssiBarInner {
+.RssiBarInner {
   position: absolute;
   height: 100%;
   max-width: 100%;
@@ -57,25 +57,6 @@ $barColors: ('red', 'deep-orange', 'amber', 'green', 'blue', 'deep-purple');
   border-radius: 0 $border-radius-sm $border-radius-sm 0;
 
   transition: width 0.25s ease-in-out;
-}
-
-@for $i from 1 through length($barColors) {
-  $barColor: nth($barColors, $i);
-
-  .FrequencySelector#{$i} {
-    @extend %FrequencySelector;
-    background-color: material-color($barColor, '50');
-  }
-
-  .RssiBar#{$i} {
-    @extend %RssiBar;
-    background-color: material-color($barColor, '100');
-  }
-
-  .RssiBarInner#{$i} {
-    @extend %RssiBarInner;
-    background-color: material-color($barColor, '200');
-  }
 }
 
 .RssiBarText {

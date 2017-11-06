@@ -65,6 +65,10 @@ class Channel {
   get name() {
     return `${this.band}${this.index + 1}`
   }
+
+  get hue() {
+    return frequencyToHue(this.frequency)
+  }
 }
 
 class ChannelCollection {
@@ -90,4 +94,9 @@ for (const band in frequenciesByBand) {
   }
 }
 
+function frequencyToHue(frequency) {
+  return (frequency - 5645) * 1.2
+}
+
 export default new ChannelCollection(allChannels)
+export { frequencyToHue }
