@@ -1,8 +1,6 @@
 import React from 'react'
 import styles from './DeviceStatus.scss';
 
-import StatusPill from './StatusPill/StatusPill'
-
 const DeviceStatus = (props) => {
   const voltage = props.voltage !== undefined ? props.voltage : '?'
   const temperature = props.temperature !== undefined ? props.temperature : '?'
@@ -15,20 +13,20 @@ const DeviceStatus = (props) => {
   }
 
   return <div className={styles.DeviceStatus}>
-    <StatusPill>
+    <div className={styles.Metric}>
       <div className={styles.IconBattery} />
       {voltage}V
-    </StatusPill>
+    </div>
 
-    <StatusPill>
+    <div className={styles.Metric}>
       <div className={styles.IconTemperature} />
       {temperature}°C
-    </StatusPill>
+    </div>
 
-    <StatusPill>
+    <div className={styles.Metric}>
       <div className={styles.IconAccuracy} />
       {accuracy}ms
-    </StatusPill>
+    </div>
   </div>
 }
 
